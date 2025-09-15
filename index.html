@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Mundos v6.6</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header-content">
+                <h1>Editor de Mundos v6.6</h1>
+                <div class="status-indicators">
+                    <span id="connection-status" class="status-indicator">🌐 Online</span>
+                    <span id="environment-status" class="status-indicator">🖥️ Local</span>
+                    <button id="voice-toggle" class="voice-btn">🎤 Voz</button>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navigation">
+            <ul class="nav-menu">
+                <li><a href="#editor" class="nav-link active" data-section="editor">Editor</a></li>
+                <li><a href="#worlds" class="nav-link" data-section="worlds">Mundos</a></li>
+                <li><a href="#settings" class="nav-link" data-section="settings">Configuración</a></li>
+                <li><a href="#sync" class="nav-link" data-section="sync">Sincronización</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <!-- Editor Section -->
+            <section id="editor-section" class="content-section active">
+                <div class="editor-container">
+                    <div class="editor-toolbar">
+                        <button id="new-world" class="btn btn-primary">Nuevo Mundo</button>
+                        <button id="save-world" class="btn btn-success">Guardar</button>
+                        <button id="load-world" class="btn btn-info">Cargar</button>
+                        <button id="export-world" class="btn btn-warning">Exportar</button>
+                    </div>
+                    <div class="editor-workspace">
+                        <div class="world-properties">
+                            <h3>Propiedades del Mundo</h3>
+                            <input type="text" id="world-name" placeholder="Nombre del mundo" class="form-input">
+                            <textarea id="world-description" placeholder="Descripción del mundo" class="form-textarea"></textarea>
+                            <select id="world-type" class="form-select">
+                                <option value="fantasy">Fantasía</option>
+                                <option value="scifi">Ciencia Ficción</option>
+                                <option value="modern">Moderno</option>
+                                <option value="historical">Histórico</option>
+                            </select>
+                        </div>
+                        <div class="world-canvas">
+                            <canvas id="world-editor" width="800" height="600"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Worlds Section -->
+            <section id="worlds-section" class="content-section">
+                <div class="worlds-container">
+                    <h2>Mis Mundos</h2>
+                    <div class="worlds-grid" id="worlds-grid">
+                        <!-- Worlds will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="content-section">
+                <div class="settings-container">
+                    <h2>Configuración</h2>
+                    <div class="settings-group">
+                        <h3>Almacenamiento</h3>
+                        <label class="setting-item">
+                            <input type="checkbox" id="auto-save" checked>
+                            <span>Guardado automático</span>
+                        </label>
+                        <label class="setting-item">
+                            <input type="checkbox" id="cloud-sync">
+                            <span>Sincronización en la nube</span>
+                        </label>
+                    </div>
+                    <div class="settings-group">
+                        <h3>Interfaz</h3>
+                        <label class="setting-item">
+                            <input type="checkbox" id="dark-mode">
+                            <span>Modo oscuro</span>
+                        </label>
+                        <label class="setting-item">
+                            <input type="checkbox" id="voice-navigation" checked>
+                            <span>Navegación por voz</span>
+                        </label>
+                    </div>
+                    <div class="settings-group">
+                        <h3>API Configuration</h3>
+                        <input type="password" id="api-key" placeholder="API Key" class="form-input">
+                        <input type="text" id="api-endpoint" placeholder="API Endpoint" class="form-input">
+                        <button id="test-connection" class="btn btn-info">Probar Conexión</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sync Section -->
+            <section id="sync-section" class="content-section">
+                <div class="sync-container">
+                    <h2>Sincronización</h2>
+                    <div class="sync-status">
+                        <p>Estado: <span id="sync-status">Desconectado</span></p>
+                        <p>Última sincronización: <span id="last-sync">Nunca</span></p>
+                    </div>
+                    <div class="sync-actions">
+                        <button id="sync-now" class="btn btn-primary">Sincronizar Ahora</button>
+                        <button id="force-sync" class="btn btn-warning">Forzar Sincronización</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Voice Recognition Modal -->
+        <div id="voice-modal" class="modal">
+            <div class="modal-content">
+                <h3>Navegación por Voz</h3>
+                <p>Escuchando... Di un comando:</p>
+                <ul>
+                    <li>"Ir a editor" - Abrir editor</li>
+                    <li>"Ir a mundos" - Ver mundos</li>
+                    <li>"Guardar mundo" - Guardar trabajo actual</li>
+                    <li>"Nuevo mundo" - Crear nuevo mundo</li>
+                </ul>
+                <button id="stop-voice" class="btn btn-danger">Detener</button>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="loading-spinner"></div>
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/voice.js"></script>
+    <script src="js/sync.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

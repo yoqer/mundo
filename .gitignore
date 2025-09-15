@@ -1,0 +1,264 @@
+# Editor de Mundos v6.0 - .gitignore
+
+# Archivos de configuración sensibles
+config/secure-config.json
+config/api-keys.json
+config/production.json
+.env
+.env.local
+.env.production
+
+# Claves API y tokens
+**/api-keys.*
+**/tokens.*
+**/*-key.*
+**/*-secret.*
+**/*-token.*
+
+# Archivos de documentación con información sensible
+docs/api-documentation.md
+docs/deployment-guide.md
+docs/server-config.md
+docs/ftp-credentials.md
+docs/database-config.md
+
+# Archivos de respaldo y temporales
+*.bak
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias
+node_modules/
+bower_components/
+jspm_packages/
+
+# Archivos de construcción
+dist/
+build/
+.cache/
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos del sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archivos de configuración local
+config/local.json
+config/development.json
+local-config.*
+
+# Archivos de base de datos
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos de certificados
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Archivos de respaldo de mundos (contienen datos del usuario)
+backups/
+exports/
+user-data/
+
+# Archivos de caché
+.cache/
+cache/
+tmp/
+
+# Archivos de configuración del servidor
+server-config/
+deployment/
+.htaccess
+
+# Variables de entorno específicas
+.env.production.local
+.env.development.local
+.env.test.local
+
+# Archivos de configuración de FTP
+ftp-config.*
+sftp-config.*
+
+# Archivos de configuración de base de datos
+db-config.*
+database.*
+
+# Archivos de configuración de correo
+mail-config.*
+smtp-config.*
+
+# Archivos de configuración de servicios externos
+aws-config.*
+google-config.*
+azure-config.*
+
+# Archivos de sesión
+sessions/
+*.session
+
+# Archivos de configuración de proxy
+proxy-config.*
+
+# Archivos de configuración de SSL
+ssl/
+certificates/
+
+# Archivos de configuración específicos del entorno
+production-config.*
+staging-config.*
+
+# Archivos de monitoreo y analytics
+analytics-config.*
+monitoring-config.*
+
+# Archivos de configuración de CDN
+cdn-config.*
+
+# Archivos de configuración de almacenamiento
+storage-config.*
+s3-config.*
+
+# Archivos de configuración de autenticación
+auth-config.*
+oauth-config.*
+jwt-config.*
+
+# Archivos de configuración de API externa
+external-api-config.*
+third-party-config.*
+
+# Archivos de configuración de webhooks
+webhook-config.*
+
+# Archivos de configuración de notificaciones
+notification-config.*
+push-config.*
+
+# Archivos de configuración de pagos
+payment-config.*
+stripe-config.*
+paypal-config.*
+
+# Archivos de configuración de redes sociales
+social-config.*
+facebook-config.*
+twitter-config.*
+google-oauth-config.*
+
+# Archivos de configuración de servicios de mapas
+maps-config.*
+google-maps-config.*
+
+# Archivos de configuración de servicios de traducción
+translation-config.*
+
+# Archivos de configuración de servicios de IA
+ai-config.*
+openai-config.*
+anthropic-config.*
+
+# Archivos de configuración de servicios de voz
+voice-config.*
+speech-config.*
+
+# Archivos de configuración de servicios de imagen
+image-config.*
+cloudinary-config.*
+
+# Archivos de configuración de servicios de video
+video-config.*
+
+# Archivos de configuración de servicios de audio
+audio-config.*
+
+# Archivos de configuración de servicios de almacenamiento de archivos
+file-storage-config.*
+dropbox-config.*
+onedrive-config.*
+
+# Archivos de configuración de servicios de backup
+backup-config.*
+
+# Archivos de configuración de servicios de sincronización
+sync-config.*
+
+# Archivos de configuración de servicios de cola
+queue-config.*
+redis-config.*
+
+# Archivos de configuración de servicios de caché
+cache-config.*
+memcached-config.*
+
+# Archivos de configuración de servicios de búsqueda
+search-config.*
+elasticsearch-config.*
+
+# Archivos de configuración de servicios de logging
+logging-config.*
+sentry-config.*
+
+# Archivos de configuración de servicios de métricas
+metrics-config.*
+
+# Archivos de configuración de servicios de testing
+test-config.*
+testing-credentials.*
+
+# Archivos de configuración de CI/CD
+ci-config.*
+cd-config.*
+github-actions-secrets.*
+gitlab-ci-secrets.*
+
+# Archivos de configuración de Docker con secretos
+docker-compose.production.yml
+docker-compose.secrets.yml
+.dockerignore.secrets
+
+# Archivos de configuración de Kubernetes con secretos
+k8s-secrets/
+kubernetes-secrets/
+*.secret.yaml
+*.secret.yml
+
+# Archivos de configuración de Terraform con secretos
+terraform.tfvars
+*.tfvars
+terraform.tfstate
+terraform.tfstate.backup
+
+# Archivos de configuración de Ansible con secretos
+ansible-vault.*
+inventory/production
+inventory/staging
+group_vars/production/
+group_vars/staging/
+host_vars/production/
+host_vars/staging/
+

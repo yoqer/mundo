@@ -96,7 +96,7 @@ La aplicación es instalable como PWA con:
 
 ## 📄 Licencia
 
-Todos los derechos reservados - Maxxine Systems
+MIT - Carlo Maxxine 
 
 ## 🆕 Changelog v6.6
 
